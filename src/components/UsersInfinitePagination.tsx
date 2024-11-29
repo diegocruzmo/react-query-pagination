@@ -3,7 +3,7 @@ import { fetchCharacters } from '../utils/fetchCharacters'
 import { Character, Page } from '../types'
 
 const UsersInfinitePagination = () => {
-  const { data, error, isLoading, fetchNextPage, hasNextPage } =
+  const { data, error, isLoading, fetchNextPage, hasNextPage, isFetching } =
     useInfiniteQuery({
       queryKey: ['characters'],
       queryFn: ({ pageParam }) => fetchCharacters({ pageParam }),
@@ -29,7 +29,10 @@ const UsersInfinitePagination = () => {
           </div>
         ))}
       </ul>
-      <button onClick={() => fetchNextPage()} disabled={!hasNextPage}>
+      <button
+        onClick={() => fetchNextPage()}
+        disabled={!hasNextPage || isFetching}
+      >
         Load More
       </button>
     </div>
