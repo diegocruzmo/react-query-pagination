@@ -63,3 +63,8 @@ export interface Usr {
   data: Data
   support: Support
 }
+
+export interface TodoType {
+  id: number
+  title: string
+}

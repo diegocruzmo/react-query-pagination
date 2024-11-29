@@ -1,5 +1,6 @@
 import UsersPaginationComponent from './components/UsersPaginationComponent'
 import UsersInfinitePagination from './components/UsersInfinitePagination'
+import Todo from './components/Todo'
 
 const App = () => {
   return (
@@ -7,6 +8,8 @@ const App = () => {
       <UsersPaginationComponent />
       <hr />
       <UsersInfinitePagination />
+      <hr />
+      <Todo />
     </>
   )
 }
